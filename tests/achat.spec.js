@@ -35,13 +35,13 @@ test('Le panier se met à jour après le retrait d’un produit', async ({ page 
   await expect(compteur).toHaveText('1');
 
   // 5. Attendre 5 secondes pour voir le résultat
-await page.waitForTimeout(5000);
+  await page.waitForTimeout(5000);
 
 // Retirer le deuxième produit, la lampe.
-await page.locator('#remove-sauce-labs-bike-light').click();
+  await page.locator('#remove-sauce-labs-bike-light').click();
 
 // Vérifier que la lampe et le badge du compteur ont disparu.
-await expect(lampe).toHaveCount(0);
-await expect(compteur).toHaveCount(0);
+  await expect(lampe).toHaveCount(0);
+  await expect(compteur).toHaveCount(0);
 
 });
